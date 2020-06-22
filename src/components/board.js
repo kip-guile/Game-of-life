@@ -1,12 +1,18 @@
 import React from "react";
+import Controls from "./controls";
+import { connect } from "react-redux";
+import { toggleSwitch } from "../actions/";
+import Cell from "./cell";
 
-function Board() {
-  const test = [];
-  for (let i = 0; i < 25; i++) {
-    test.push(i);
-  }
+function Board({ board, toggleSwitch }) {
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
       <table
         style={{
           display: "flex",
@@ -16,27 +22,26 @@ function Board() {
         }}
       >
         <tbody>
-          {test.map((row, i) => (
+          {board.map((row, i) => (
             <tr key={i}>
-              {test.map((cell, j) => (
-                <td
+              {row.map((cell, j) => (
+                <Cell
                   key={j}
-                  style={{
-                    border: "1px solid red",
-                    height: "1.5em",
-                    width: "1.5em",
-                    // backgroundColor: "dodgerblue",
-                  }}
-                >
-                  {null}
-                </td>
+                  active={cell.status}
+                  handleActive={() => toggleSwitch({ x: i, y: j })}
+                />
               ))}
             </tr>
           ))}
         </tbody>
       </table>
+      <Controls />
     </div>
   );
 }
 
-export default Board;
+const mapStateToProps = (state) => ({
+  board: state.board,
+});
+
+export default connect(mapStateToProps, { toggleSwitch })(Board);
