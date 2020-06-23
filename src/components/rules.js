@@ -16,10 +16,13 @@ const Rules = () => (
         </li>
         <li>
           If the cell is dead and has exactly 3 neighbors, then it comes to
-          life. Else if remains dead.
+          life. Else, it remains dead.
         </li>
       </ul>
-      <p>Cells that are off the edge of the grid wrap around to the far side</p>
+      <p>
+        In this implementation, cells that are off the edge of the grid wrap
+        around to the far side.
+      </p>
     </div>
   </div>
 );

@@ -14,16 +14,37 @@ const Controls = ({ nextSlide, clear, playNow, play, stopPlay, randomize }) => {
       stopPlay();
     }
   };
+  const withClosure = () => {
+    let newSPeed = 500;
+    const fast = () => {
+      newSPeed /= 2;
+      if (play.label) {
+        clearInterval(play.label);
+      }
+      // if (play.playing === true) {
+      const label = setInterval(nextSlide, newSPeed);
+      playNow(label);
+      // }
+    };
+    return fast;
+  };
+  const deploy = withClosure();
+  const stopPlayFxn = () => {
+    clearInterval(play.label);
+    stopPlay();
+  };
   return (
     <div className="controls">
       <div className="buttons">
         <Button title={"reset"} handleClick={clear} />
         <Button icon={"fa fa-random fa-lg"} handleClick={randomize} />
         <Button
-          icon={!play.playing ? "fa fa-play fa-lg" : "fa fa-stop"}
+          icon={!play.playing ? "fa fa-play fa-lg" : "fa fa-pause"}
           handleClick={togglePlay}
         />
+        <Button icon="fa fa-stop" handleClick={stopPlayFxn} />
         <Button icon={"fa fa-step-forward fa-lg"} handleClick={nextSlide} />
+        <Button icon={"fa fa-fast-forward fa-lg"} handleClick={deploy} />
       </div>
     </div>
   );
