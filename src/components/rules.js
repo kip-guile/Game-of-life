@@ -2,7 +2,7 @@ import React from "react";
 
 const Rules = () => (
   <div style={{ width: "20em", textAlign: "left", marginLeft: "3em" }}>
-    <h3 style={{ textAlign: "center" }}>Rules</h3>
+    <h3 style={{ textAlign: "center", color: "#ff6f91" }}>Rules</h3>
     <div>
       <p>
         In the Game of Life, these rules examine each cell of the grid. For each

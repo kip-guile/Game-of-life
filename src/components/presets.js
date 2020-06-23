@@ -14,8 +14,10 @@ const Presets = ({ setPreset }) => {
         marginLeft: "2em",
         paddingRight: "2em",
         borderRight: "3px solid #ddd",
+        textAlign: "center",
       }}
     >
+      <h4 style={{ color: "#ff6f91" }}>Spaceships</h4>
       <Button
         title={"Lightweight Spaceship"}
         handleClick={() =>
@@ -47,6 +49,7 @@ const Presets = ({ setPreset }) => {
           ])
         }
       />
+      <h4 style={{ color: "#ff6f91" }}>Oscillators</h4>
       <Button
         title={"Blinker"}
         handleClick={() =>
@@ -169,6 +172,7 @@ const Presets = ({ setPreset }) => {
           ])
         }
       />
+      <h4 style={{ color: "#ff6f91" }}>Still Lifes</h4>
       <Button
         title={"Beehive"}
         handleClick={() =>

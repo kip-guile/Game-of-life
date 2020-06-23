@@ -11,7 +11,7 @@ function Main() {
         alignItems: "center",
       }}
     >
-      <div style={{ marginBottom: "1.9em" }}>
+      <div style={{ marginBottom: "1.9em", color: "#ff6f91" }}>
         <h1 className="bigtext">Conway's Game of life</h1>
       </div>
 

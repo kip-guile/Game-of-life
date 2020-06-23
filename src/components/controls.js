@@ -17,13 +17,13 @@ const Controls = ({ nextSlide, clear, playNow, play, stopPlay, randomize }) => {
   return (
     <div className="controls">
       <div className="buttons">
-        <Button title={"random"} handleClick={randomize} />
         <Button title={"reset"} handleClick={clear} />
+        <Button icon={"fa fa-random fa-lg"} handleClick={randomize} />
         <Button
-          title={!play.playing ? "play" : "stop"}
+          icon={!play.playing ? "fa fa-play fa-lg" : "fa fa-stop"}
           handleClick={togglePlay}
         />
-        <Button title="next" handleClick={nextSlide} />
+        <Button icon={"fa fa-step-forward fa-lg"} handleClick={nextSlide} />
       </div>
     </div>
   );
