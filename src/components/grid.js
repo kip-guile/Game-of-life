@@ -15,7 +15,6 @@ export const buildBoard = (height, width) => {
 export const nextSlide = (board = {}) => {
   // height is length of array
   // width is length of each nested array
-  //   let boardHeight = board.length;
   let boardHeight = Object.keys(board).length;
   let boardWidth = board[0].length;
 
@@ -61,7 +60,6 @@ export const nextSlide = (board = {}) => {
       }
     }
     newSlide[i] = row;
-    // newSlide.push(row);
   }
   return newSlide;
 };

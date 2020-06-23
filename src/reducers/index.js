@@ -16,6 +16,14 @@ const boardReducer = (state = initialBoard, action) => {
         board[x][y] = 0;
       }
       return board;
+    case "SET_PRESET":
+      let newboard = grid.buildBoard(30, 30);
+      for (let i = 0; i < action.payload.length; i++) {
+        let x = action.payload[i][0];
+        let y = action.payload[i][1];
+        newboard[x][y] = 1;
+      }
+      return newboard;
     case "SLIDE":
       return grid.nextSlide({ ...state });
     default:

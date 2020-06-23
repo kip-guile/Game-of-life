@@ -29,14 +29,14 @@
 
 .activecell {
   background-color: black;
-  height: 1.1em;
-  width: 1.1em;
+  height: 0.8em;
+  width: 0.8em;
   border: 2px solid #ddd;
 }
 
 .deadcell {
   background-color: transparent;
-  height: 1.1em;
-  width: 1.1em;
+  height: 0.8em;
+  width: 0.8em;
   border: 2px solid #ddd;
 }
