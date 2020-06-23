@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import * as grid from "../components/grid";
 
-const initialBoard = grid.buildBoard(30, 30);
+const initialBoard = grid.buildBoard(40, 40);
 const initialPlayState = {
   playing: false,
   label: null,
@@ -38,7 +38,7 @@ const boardReducer = (state = initialBoard, action) => {
       }
       return board;
     case "SET_PRESET":
-      let newboard = grid.buildBoard(30, 30);
+      let newboard = grid.buildBoard(40, 40);
       for (let i = 0; i < action.payload.length; i++) {
         let x = action.payload[i][0];
         let y = action.payload[i][1];
@@ -46,11 +46,11 @@ const boardReducer = (state = initialBoard, action) => {
       }
       return newboard;
     case "RANDOM":
-      return grid.buildBoard(30, 30, true);
+      return grid.buildBoard(40, 40, true);
     case "SLIDE":
       return grid.nextSlide({ ...state });
     case "CLEAR":
-      return grid.buildBoard(30, 30);
+      return grid.buildBoard(40, 40);
     default:
       return state;
   }
