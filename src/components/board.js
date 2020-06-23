@@ -22,7 +22,20 @@ function Board({ board, toggleSwitch }) {
         }}
       >
         <tbody>
-          {board.map((row, i) => (
+          {Object.entries(board).map(([key, value]) => (
+            <tr key={key}>
+              {value.map((cell, j) => (
+                <Cell
+                  key={j}
+                  active={cell.status}
+                  handleActive={() =>
+                    toggleSwitch(cell.status, { x: parseInt(key), y: j })
+                  }
+                />
+              ))}
+            </tr>
+          ))}
+          {/* {board.map((row, i) => (
             <tr key={i}>
               {row.map((cell, j) => (
                 <Cell
@@ -32,7 +45,7 @@ function Board({ board, toggleSwitch }) {
                 />
               ))}
             </tr>
-          ))}
+          ))} */}
         </tbody>
       </table>
       <Controls />

@@ -1,20 +1,22 @@
 export const buildBoard = (height, width) => {
-  let board = [];
+  let board = {};
   for (let i = 0; i < height; i++) {
     let row = [];
     for (var j = 0; j < width; j++) {
       let value = 0;
       row.push({ status: value });
     }
-    board.push(row);
+    board[i] = row;
+    // board.push(row);
   }
   return board;
 };
 
-export const nextSlide = (board = []) => {
+export const nextSlide = (board = {}) => {
   // height is length of array
   // width is length of each nested array
-  let boardHeight = board.length;
+  //   let boardHeight = board.length;
+  let boardHeight = Object.keys(board).length;
   let boardWidth = board[0].length;
 
   const activeNeighbours = (x, y) => {
@@ -35,7 +37,7 @@ export const nextSlide = (board = []) => {
     return neighbours;
   };
 
-  let newSlide = [];
+  let newSlide = {};
   for (let i = 0; i < boardHeight; i++) {
     let row = [];
     for (let j = 0; j < boardWidth; j++) {
@@ -58,7 +60,8 @@ export const nextSlide = (board = []) => {
         }
       }
     }
-    newSlide.push(row);
+    newSlide.i = row;
+    // newSlide.push(row);
   }
   return newSlide;
 };

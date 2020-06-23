@@ -1,15 +1,16 @@
 import React from "react";
 import "../App.css";
 
-const Cell = ({ active, handleActive }) => {
+const Cell = (props) => {
+  console.log(props);
   return (
     <td
-      onClick={handleActive}
+      onClick={props.handleActive}
       style={{
-        backgroundColor: active ? "black" : "transparent",
+        backgroundColor: props.active ? "black" : "transparent",
         height: "1.1em",
         width: "1.1em",
-        border: "1px solid #ddd",
+        border: "2px solid #ddd",
       }}
     />
   );
