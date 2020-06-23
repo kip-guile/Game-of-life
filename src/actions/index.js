@@ -1,7 +1,6 @@
 import { SWITCH, SLIDE } from "./types";
 
-export const toggleSwitch = (cell, cordinates) => {
-  console.log(cell);
+export const toggleSwitch = (cordinates) => {
   return {
     type: SWITCH,
     payload: cordinates,

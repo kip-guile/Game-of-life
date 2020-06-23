@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Controls from "./controls";
 import { connect } from "react-redux";
 import { toggleSwitch } from "../actions/";
@@ -27,10 +27,8 @@ function Board({ board, toggleSwitch }) {
               {value.map((cell, j) => (
                 <Cell
                   key={`${key}-${j}`}
-                  alive={cell.status}
-                  handleSwitch={() =>
-                    toggleSwitch(cell.status, { x: parseInt(key), y: j })
-                  }
+                  alive={cell}
+                  handleSwitch={() => toggleSwitch({ x: parseInt(key), y: j })}
                 />
               ))}
             </tr>

@@ -3,8 +3,8 @@ export const buildBoard = (height, width) => {
   for (let i = 0; i < height; i++) {
     let row = [];
     for (var j = 0; j < width; j++) {
-      let value = 0;
-      row.push({ status: value });
+      //   let value = 0;
+      row.push(0);
     }
     board[i] = row;
     // board.push(row);
