@@ -5,13 +5,15 @@
   font-size: 0.9em;
   font-weight: 400;
   line-height: 1.5em;
-  background: dodgerblue;
+  background: #845ec2;
   color: #fff;
   cursor: pointer;
+  border-radius: 0.5em;
+  text-align: center;
 }
 
 .button:hover {
-  background: #ff5400;
+  background: #008f7a;
 }
 
 .button-group {
@@ -25,4 +27,30 @@
 
 .button-group .button:last-child {
   border-right: 0;
+}
+
+.activecell {
+  background-color: #ddd;
+  height: 0.8em;
+  width: 0.8em;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.deadcell {
+  background-color: #008f7a;
+  height: 0.8em;
+  width: 0.8em;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.controls {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.bigtext {
+  font-family: "Press Start 2P", cursive;
 }
