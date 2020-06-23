@@ -1,13 +1,15 @@
-export const buildBoard = (height, width) => {
+export const buildBoard = (height, width, random = false) => {
   let board = {};
   for (let i = 0; i < height; i++) {
     let row = [];
     for (var j = 0; j < width; j++) {
-      //   let value = 0;
-      row.push(0);
+      if (random) {
+        row.push(Math.round(Math.random()));
+      } else {
+        row.push(0);
+      }
     }
     board[i] = row;
-    // board.push(row);
   }
   return board;
 };

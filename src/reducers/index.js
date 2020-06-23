@@ -2,6 +2,27 @@ import { combineReducers } from "redux";
 import * as grid from "../components/grid";
 
 const initialBoard = grid.buildBoard(30, 30);
+const initialPlayState = {
+  playing: false,
+  label: null,
+};
+
+const playReducer = (state = initialPlayState, action) => {
+  switch (action.type) {
+    case "PLAY":
+      return {
+        playing: true,
+        label: action.payload,
+      };
+    case "STOP":
+      return {
+        playing: false,
+        label: null,
+      };
+    default:
+      return state;
+  }
+};
 
 const boardReducer = (state = initialBoard, action) => {
   switch (action.type) {
@@ -24,6 +45,8 @@ const boardReducer = (state = initialBoard, action) => {
         newboard[x][y] = 1;
       }
       return newboard;
+    case "RANDOM":
+      return grid.buildBoard(30, 30, true);
     case "SLIDE":
       return grid.nextSlide({ ...state });
     case "CLEAR":
@@ -35,6 +58,7 @@ const boardReducer = (state = initialBoard, action) => {
 
 const rootReducer = combineReducers({
   board: boardReducer,
+  play: playReducer,
 });
 
 export default rootReducer;
