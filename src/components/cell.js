@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 
-const Cell = ({ active, newBorn, handleActive }) => {
+const Cell = ({ active, handleActive }) => {
   return (
     <td
       onClick={handleActive}

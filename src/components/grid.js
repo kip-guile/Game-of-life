@@ -3,19 +3,19 @@ export const buildBoard = (height, width) => {
   for (let i = 0; i < height; i++) {
     let row = [];
     for (var j = 0; j < width; j++) {
-      let value = false;
-      row.push({ status: value, newBorn: value });
+      let value = 0;
+      row.push({ status: value });
     }
     board.push(row);
   }
   return board;
 };
 
-export const nextSlide = (board) => {
+export const nextSlide = (board = []) => {
   // height is length of array
   // width is length of each nested array
   let boardHeight = board.length;
-  let boardWidth = board.width;
+  let boardWidth = board[0].length;
 
   const activeNeighbours = (x, y) => {
     const topRow = x - 1 < 0 ? boardHeight - 1 : x - 1;
@@ -23,16 +23,15 @@ export const nextSlide = (board) => {
     const leftColumn = y - 1 < 0 ? boardWidth - 1 : y - 1;
     const rightColumn = y + 1 === boardHeight ? 0 : y + 1;
 
-    let neighbours = 0;
-    neighbours += board[topRow][leftColumn].status;
-    neighbours += board[topRow][y].status;
-    neighbours += board[topRow][rightColumn].status;
-    neighbours += board[x][leftColumn].status;
-    neighbours += board[x][rightColumn].status;
-    neighbours += board[bottomRow][leftColumn].status;
-    neighbours += board[bottomRow][y].status;
-    neighbours = board[bottomRow][rightColumn].status;
-
+    let neighbours =
+      board[topRow][leftColumn].status +
+      board[topRow][y].status +
+      board[topRow][rightColumn].status +
+      board[x][leftColumn].status +
+      board[x][rightColumn].status +
+      board[bottomRow][leftColumn].status +
+      board[bottomRow][y].status +
+      board[bottomRow][rightColumn].status;
     return neighbours;
   };
 
@@ -42,16 +41,16 @@ export const nextSlide = (board) => {
     for (let j = 0; j < boardWidth; j++) {
       let isActive = board[i][j].status;
       let neighbours = activeNeighbours(i, j);
-      if (isActive) {
-        if (neighbours > 3) {
+      if (isActive === 1) {
+        if (neighbours < 2) {
           row.push({ status: 0 });
-        } else if (neighbours < 2) {
+        } else if (neighbours > 3) {
           row.push({ status: 0 });
         } else {
           row.push({ status: 1 });
         }
       }
-      if (!isActive) {
+      if (isActive === 0) {
         if (neighbours === 3) {
           row.push({ status: 1 });
         } else {

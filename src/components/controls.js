@@ -1,8 +1,10 @@
 import React from "react";
+import { connect } from "react-redux";
 import Button from "./button";
 import "../App.css";
+import { nextSlide } from "../actions";
 
-const Controls = () => {
+const Controls = ({ nextSlide }) => {
   return (
     <div className="controls">
       <div className="buttons">
@@ -10,6 +12,7 @@ const Controls = () => {
         <Button title={"reset"} />
         <div className="button-group">
           <Button title={"play"} />
+          <Button title="next" handleClick={nextSlide} />
           <Button title="stop" />
         </div>
       </div>
@@ -17,4 +20,4 @@ const Controls = () => {
   );
 };
 
-export default Controls;
+export default connect(null, { nextSlide })(Controls);
