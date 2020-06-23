@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Controls from "./controls";
 import { connect } from "react-redux";
 import { toggleSwitch } from "../actions/";
