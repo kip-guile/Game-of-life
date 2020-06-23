@@ -5,13 +5,15 @@
   font-size: 0.9em;
   font-weight: 400;
   line-height: 1.5em;
-  background: dodgerblue;
+  background: #845ec2;
   color: #fff;
   cursor: pointer;
+  border-radius: 0.5em;
+  text-align: center;
 }
 
 .button:hover {
-  background: #ff5400;
+  background: #008f7a;
 }
 
 .button-group {
@@ -28,17 +30,17 @@
 }
 
 .activecell {
-  background-color: black;
+  background-color: #ddd;
   height: 0.8em;
   width: 0.8em;
-  border: 2px solid #ddd;
+  border: 1px solid black;
 }
 
 .deadcell {
-  background-color: transparent;
+  background-color: #008f7a;
   height: 0.8em;
   width: 0.8em;
-  border: 2px solid #ddd;
+  border: 1px solid black;
 }
 
 .controls {
