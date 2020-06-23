@@ -11,7 +11,9 @@ const Presets = ({ setPreset }) => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-around",
-        marginLeft: "10px",
+        marginLeft: "2em",
+        paddingRight: "2em",
+        borderRight: "3px solid #ddd",
       }}
     >
       <Button

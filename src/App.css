@@ -40,3 +40,9 @@
   width: 0.8em;
   border: 2px solid #ddd;
 }
+
+.controls {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}

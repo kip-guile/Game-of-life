@@ -1,5 +1,6 @@
 import React from "react";
 import Board from "../components/board";
+import About from "../components/about";
 
 function Main() {
   return (
@@ -8,6 +9,7 @@ function Main() {
     >
       <h1>Conway's Game of life</h1>
       <Board />
+      <About />
     </div>
   );
 }

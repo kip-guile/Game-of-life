@@ -1,4 +1,4 @@
-import { SWITCH, SLIDE, SET_PRESET } from "./types";
+import { SWITCH, SLIDE, SET_PRESET, CLEAR } from "./types";
 
 export const toggleSwitch = (cordinates) => {
   return {
@@ -17,5 +17,11 @@ export const setPreset = (cells) => {
   return {
     type: SET_PRESET,
     payload: cells,
+  };
+};
+
+export const clear = () => {
+  return {
+    type: CLEAR,
   };
 };

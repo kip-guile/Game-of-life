@@ -26,6 +26,8 @@ const boardReducer = (state = initialBoard, action) => {
       return newboard;
     case "SLIDE":
       return grid.nextSlide({ ...state });
+    case "CLEAR":
+      return grid.buildBoard(30, 30);
     default:
       return state;
   }

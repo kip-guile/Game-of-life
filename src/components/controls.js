@@ -2,14 +2,14 @@ import React from "react";
 import { connect } from "react-redux";
 import Button from "./button";
 import "../App.css";
-import { nextSlide } from "../actions";
+import { nextSlide, clear } from "../actions";
 
-const Controls = ({ nextSlide }) => {
+const Controls = ({ nextSlide, clear }) => {
   return (
     <div className="controls">
       <div className="buttons">
         <Button title={"select"} />
-        <Button title={"reset"} />
+        <Button title={"reset"} handleClick={clear} />
         <div className="button-group">
           <Button title={"play"} />
           <Button title="next" handleClick={nextSlide} />
@@ -20,4 +20,4 @@ const Controls = ({ nextSlide }) => {
   );
 };
 
-export default connect(null, { nextSlide })(Controls);
+export default connect(null, { nextSlide, clear })(Controls);

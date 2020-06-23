@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { toggleSwitch } from "../actions/";
 import Cell from "./cell";
 import Presets from "./presets";
+import Rules from "./rules";
 
 function Board({ board, toggleSwitch }) {
   return (
@@ -40,6 +41,7 @@ function Board({ board, toggleSwitch }) {
           </tbody>
         </table>
         <Presets />
+        <Rules />
       </div>
       <Controls />
     </div>
