@@ -1,17 +1,11 @@
 import React from "react";
 import "../App.css";
 
-const Cell = (props) => {
-  console.log(props);
+const Cell = ({ alive, handleSwitch }) => {
   return (
     <td
-      onClick={props.handleActive}
-      style={{
-        backgroundColor: props.active ? "black" : "transparent",
-        height: "1.1em",
-        width: "1.1em",
-        border: "2px solid #ddd",
-      }}
+      onClick={handleSwitch}
+      className={alive === 1 ? "activecell" : "deadcell"}
     />
   );
 };

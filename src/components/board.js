@@ -26,26 +26,15 @@ function Board({ board, toggleSwitch }) {
             <tr key={key}>
               {value.map((cell, j) => (
                 <Cell
-                  key={j}
-                  active={cell.status}
-                  handleActive={() =>
+                  key={`${key}-${j}`}
+                  alive={cell.status}
+                  handleSwitch={() =>
                     toggleSwitch(cell.status, { x: parseInt(key), y: j })
                   }
                 />
               ))}
             </tr>
           ))}
-          {/* {board.map((row, i) => (
-            <tr key={i}>
-              {row.map((cell, j) => (
-                <Cell
-                  key={j}
-                  active={cell.status}
-                  handleActive={() => toggleSwitch({ x: i, y: j })}
-                />
-              ))}
-            </tr>
-          ))} */}
         </tbody>
       </table>
       <Controls />

@@ -26,3 +26,17 @@
 .button-group .button:last-child {
   border-right: 0;
 }
+
+.activecell {
+  background-color: black;
+  height: 1.6em;
+  width: 1.1em;
+  border: 2px solid #ddd;
+}
+
+.deadcell {
+  background-color: transparent;
+  height: 1.1em;
+  width: 1.1em;
+  border: 2px solid #ddd;
+}
