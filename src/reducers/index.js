@@ -7,6 +7,19 @@ const initialPlayState = {
   label: null,
 };
 
+const generationCount = (state = 0, action) => {
+  switch (action.type) {
+    case "SLIDE":
+      return state + 1;
+    case "CLEAR":
+      return 0;
+    case "RANDOM":
+      return 0;
+    default:
+      return state;
+  }
+};
+
 const playReducer = (state = initialPlayState, action) => {
   switch (action.type) {
     case "PLAY":
@@ -59,6 +72,7 @@ const boardReducer = (state = initialBoard, action) => {
 const rootReducer = combineReducers({
   board: boardReducer,
   play: playReducer,
+  generation: generationCount,
 });
 
 export default rootReducer;

@@ -4,7 +4,15 @@ import Button from "./button";
 import "../App.css";
 import { nextSlide, clear, playNow, stopPlay, randomize } from "../actions";
 
-const Controls = ({ nextSlide, clear, playNow, play, stopPlay, randomize }) => {
+const Controls = ({
+  nextSlide,
+  clear,
+  playNow,
+  play,
+  stopPlay,
+  randomize,
+  generation,
+}) => {
   const togglePlay = () => {
     if (play.playing === false) {
       const label = setInterval(nextSlide, 500);
@@ -46,12 +54,18 @@ const Controls = ({ nextSlide, clear, playNow, play, stopPlay, randomize }) => {
         <Button icon={"fa fa-step-forward fa-lg"} handleClick={nextSlide} />
         <Button icon={"fa fa-fast-forward fa-lg"} handleClick={deploy} />
       </div>
+      <div style={{ marginLeft: "5em" }}>
+        <p>
+          Generation: <span style={{ color: "#ff6f91" }}>{generation}</span>
+        </p>
+      </div>
     </div>
   );
 };
 
 const mapStateToProps = (state) => ({
   play: state.play,
+  generation: state.generation,
 });
 
 export default connect(mapStateToProps, {
