@@ -13,14 +13,16 @@ export const nextSlide = () => {
   };
 };
 
-export const setPreset = (cells) => {
+export const setPreset = (cells, label) => {
+  clearInterval(label);
   return {
     type: SET_PRESET,
     payload: cells,
   };
 };
 
-export const clear = () => {
+export const clear = (label) => {
+  clearInterval(label);
   return {
     type: CLEAR,
   };

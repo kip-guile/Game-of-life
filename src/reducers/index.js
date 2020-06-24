@@ -7,6 +7,21 @@ const initialPlayState = {
   label: null,
 };
 
+const generationCount = (state = 0, action) => {
+  switch (action.type) {
+    case "SLIDE":
+      return state + 1;
+    case "CLEAR":
+      return 0;
+    case "RANDOM":
+      return 0;
+    case "SET_PRESET":
+      return 0;
+    default:
+      return state;
+  }
+};
+
 const playReducer = (state = initialPlayState, action) => {
   switch (action.type) {
     case "PLAY":
@@ -15,6 +30,16 @@ const playReducer = (state = initialPlayState, action) => {
         label: action.payload,
       };
     case "STOP":
+      return {
+        playing: false,
+        label: null,
+      };
+    case "CLEAR":
+      return {
+        playing: false,
+        label: null,
+      };
+    case "SET_PRESET":
       return {
         playing: false,
         label: null,
@@ -59,6 +84,7 @@ const boardReducer = (state = initialBoard, action) => {
 const rootReducer = combineReducers({
   board: boardReducer,
   play: playReducer,
+  generation: generationCount,
 });
 
 export default rootReducer;

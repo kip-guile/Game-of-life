@@ -13,13 +13,16 @@ function Board({ board, toggleSwitch }) {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        minHeight: "45em",
+        justifyContent: "center",
       }}
     >
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", marginBottom: "3em" }}>
         <table
+          className="card"
           style={{
             display: "flex",
-            margin: "1em 0",
+            marginTop: "2em",
             borderSpacing: 0,
             borderCollapse: "collapse",
           }}
