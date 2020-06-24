@@ -1,38 +1,66 @@
-.App {
+.button {
+  display: inline-block;
+  margin-right: 0.4em;
+  padding: 0.3em 0.8em;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5em;
+  background: #845ec2;
+  color: #fbeaff;
+  cursor: pointer;
+  border-radius: 0.5em;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.button:hover {
+  background: #008f7a;
+  color: #ff6f91;
+  letter-spacing: 0.5px;
+  transition: all 0.4s ease 0s;
+  box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.button-group {
+  display: inline-block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.button-group .button {
+  border-right: 1px solid #c43400;
+  margin-right: 0px;
+}
+
+.button-group .button:last-child {
+  border-right: 0;
+}
+/* #F9F871 */
+/* #ff6f91 */
+.activecell {
+  background-color: #f9f871;
+  height: 0.8em;
+  width: 0.8em;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.deadcell {
+  background-color: #008f7a;
+  height: 0.8em;
+  width: 0.8em;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.controls {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start;
+  width: 70%;
 }
 
-.App-link {
-  color: #61dafb;
+.bigtext {
+  font-family: "Press Start 2P", cursive;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card {
+  /* box-shadow: 0 8px 32px 0 rgba(211, 202, 202, 0.2); */
+  transition: 0.3s;
 }

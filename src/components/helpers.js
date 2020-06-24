@@ -1,5 +1,3 @@
-import { stopPlay } from "../actions";
-
 // count cells
 export const cellcount = (board, play) => {
   let boardHeight = Object.keys(board).length;

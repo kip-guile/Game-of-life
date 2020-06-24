@@ -1,27 +1,58 @@
 import React from "react";
+import Controls from "./controls";
+import { connect } from "react-redux";
+import { toggleSwitch } from "../actions/";
+import Cell from "./cell";
+import Presets from "./presets";
+import Rules from "./rules";
 
-function Board() {
-  const test = [];
-  for (let i = 0; i < 25; i++) {
-    test.push(i);
-  }
+function Board({ board, toggleSwitch }) {
   return (
-    <div>
-      <table style={{ margin: "1em o" }}>
-        <tbody>
-          {test.map((row, i) => (
-            <tr key={i}>
-              {test.map((cell, j) => (
-                <td key={j} style={{ backgroundColor: "dodgerblue" }}>
-                  {cell}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        minHeight: "45em",
+        justifyContent: "center",
+      }}
+    >
+      <div style={{ display: "flex", marginBottom: "3em" }}>
+        <table
+          className="card"
+          style={{
+            display: "flex",
+            marginTop: "2em",
+            borderSpacing: 0,
+            borderCollapse: "collapse",
+          }}
+        >
+          <tbody>
+            {Object.entries(board).map(([key, value]) => (
+              <tr key={key}>
+                {value.map((cell, j) => (
+                  <Cell
+                    key={`${key}-${j}`}
+                    alive={cell}
+                    handleSwitch={() =>
+                      toggleSwitch({ x: parseInt(key), y: j })
+                    }
+                  />
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <Presets />
+        <Rules />
+      </div>
+      <Controls />
     </div>
   );
 }
 
-export default Board;
+const mapStateToProps = (state) => ({
+  board: state.board,
+});
+
+export default connect(mapStateToProps, { toggleSwitch })(Board);
