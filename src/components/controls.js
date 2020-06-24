@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Button from "./button";
 import "../App.css";
 import { nextSlide, clear, playNow, stopPlay, randomize } from "../actions";
+import { cellcount } from "./helpers";
 
 const Controls = ({
   nextSlide,
@@ -12,6 +13,7 @@ const Controls = ({
   stopPlay,
   randomize,
   generation,
+  board,
 }) => {
   const togglePlay = () => {
     if (play.playing === false) {
@@ -58,7 +60,13 @@ const Controls = ({
       </div>
       <div style={{ marginLeft: "5em" }}>
         <p>
-          Generation: <span style={{ color: "#ff6f91" }}>{generation}</span>
+          (Generation - <span style={{ color: "#FF6F91" }}>{generation}</span>)
+          {"   "}
+          (Alive -{" "}
+          <span style={{ color: "#F9F871" }}>{cellcount(board)[0]}</span>){" "}
+          {"   "}
+          (Dead -{" "}
+          <span style={{ color: "#008f7a" }}>{cellcount(board)[1]}</span>)
         </p>
       </div>
     </div>
@@ -68,6 +76,7 @@ const Controls = ({
 const mapStateToProps = (state) => ({
   play: state.play,
   generation: state.generation,
+  board: state.board,
 });
 
 export default connect(mapStateToProps, {
