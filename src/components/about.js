@@ -12,6 +12,7 @@ const About = () => (
       marginTop: "3em",
       justifyContent: "center",
       marginBottom: "2em",
+      borderTop: "2px solid #fbeaff",
     }}
   >
     <h2 style={{ textAlign: "center", color: "#ff6f91", marginBottom: "2em" }}>
@@ -24,11 +25,11 @@ const About = () => (
         <img src={john} alt="John-Conway" />
       </image>
       <p>
-        Conway’s game of life is a zero player game which means its evolution is
-        determined by its input and no further interaction is required. It was
-        invented by Cambridge mathematician, John Horton Conway. The game became
-        very popular when it was mentioned in an article published by Scientific
-        American in 1970.
+        Conway’s game of life is a zero player game which means its evolution
+        throughout the game is determined by its initial input and no further
+        interaction is required. It was invented by Cambridge mathematician,
+        John Horton Conway. The game became very popular when it was mentioned
+        in an article published by Scientific American in 1970.
       </p>
     </section>
     <section>
@@ -37,9 +38,10 @@ const About = () => (
         recognise or decide other data manipulation sets.{" "}
       </p>
       <p>
-        Fundamentally, it is a grid featuring a collection of cells which can
-        live, die or multiply, depending on the initial conditions. These cells
-        form various patterns throughout the course of the game.
+        Fundamentally, the Game of Life is a grid featuring a collection of
+        cells which can live, die or multiply depending on the initial
+        conditions. These cells form various patterns throughout the course of
+        the game.
       </p>
       <p>
         Any number of different possible configurations can be used as the
@@ -55,7 +57,7 @@ const About = () => (
       </p>
       <p>
         This implementation of the algorithm was created using React and Redux,
-        with arrays in objects as the data structure. It was designed so that
+        with arrays in an object as the data structure. It was designed so that
         the cells that are off the edge of the grid wrap around to the far side.
         Another possible implementation is to have every cell at the end of the
         grid to be in the ‘dead’ state. Obviously various implementations will
