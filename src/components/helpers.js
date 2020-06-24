@@ -1,5 +1,7 @@
+import { stopPlay } from "../actions";
+
 // count cells
-export const cellcount = (board) => {
+export const cellcount = (board, play) => {
   let boardHeight = Object.keys(board).length;
   let boardWidth = board[0].length;
   let alivecount = 0;
@@ -12,6 +14,10 @@ export const cellcount = (board) => {
         deadcount += 1;
       }
     }
+  }
+  if (alivecount === 0) {
+    clearInterval(play);
+    // stopPlay();
   }
   return [alivecount, deadcount];
 };
