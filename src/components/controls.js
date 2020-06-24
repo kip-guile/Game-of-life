@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Button from "./button";
 import "../App.css";
 import { nextSlide, clear, playNow, stopPlay, randomize } from "../actions";
-import { cellcount } from "./helpers";
+import { cellcount, togglePlay, stopPlayFxn, withClosure } from "./helpers";
 
 const Controls = ({
   nextSlide,
@@ -15,36 +15,7 @@ const Controls = ({
   generation,
   board,
 }) => {
-  const togglePlay = () => {
-    if (play.playing === false) {
-      const label = setInterval(nextSlide, 500);
-      playNow(label);
-    } else {
-      clearInterval(play.label);
-      stopPlay();
-    }
-  };
-  // closure starts -------------------------
-  const withClosure = () => {
-    let newSPeed = 500;
-    const fast = () => {
-      newSPeed /= 3;
-      // clear interval before increasing speed
-      if (play.label) {
-        clearInterval(play.label);
-      }
-      const label = setInterval(nextSlide, newSPeed);
-      playNow(label);
-    };
-    return fast;
-  };
-  const deploy = withClosure();
-  // closure ends
-  // ---------------------------------------------
-  const stopPlayFxn = () => {
-    clearInterval(play.label);
-    stopPlay();
-  };
+  const deploy = withClosure(play, nextSlide, playNow);
   return (
     <div className="controls">
       <div className="buttons">
@@ -52,9 +23,12 @@ const Controls = ({
         <Button icon={"fa fa-random fa-lg"} handleClick={randomize} />
         <Button
           icon={!play.playing ? "fa fa-play fa-lg" : "fa fa-pause"}
-          handleClick={togglePlay}
+          handleClick={() => togglePlay(play, nextSlide, playNow, stopPlay)}
         />
-        <Button icon="fa fa-stop" handleClick={stopPlayFxn} />
+        <Button
+          icon="fa fa-stop"
+          handleClick={() => stopPlayFxn(play, stopPlay)}
+        />
         <Button icon={"fa fa-step-forward fa-lg"} handleClick={nextSlide} />
         <Button icon={"fa fa-fast-forward fa-lg"} handleClick={deploy} />
       </div>

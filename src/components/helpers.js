@@ -15,3 +15,39 @@ export const cellcount = (board) => {
   }
   return [alivecount, deadcount];
 };
+
+// play button function
+export const togglePlay = (play, nextSlide, playNow, stopPlay) => {
+  if (play.playing === false) {
+    const label = setInterval(nextSlide, 500);
+    playNow(label);
+  } else {
+    clearInterval(play.label);
+    stopPlay();
+  }
+};
+
+// stop button function
+export const stopPlayFxn = (play, stopPlay) => {
+  clearInterval(play.label);
+  stopPlay();
+};
+
+// fastforward button function
+// closure starts -------------------------
+export const withClosure = (play, nextSlide, playNow) => {
+  let newSPeed = 500;
+  const fast = () => {
+    newSPeed /= 3;
+    // clear interval before increasing speed
+    if (play.label) {
+      clearInterval(play.label);
+    }
+    const label = setInterval(nextSlide, newSPeed);
+    playNow(label);
+  };
+  return fast;
+};
+
+// closure ends
+// ---------------------------------------------
