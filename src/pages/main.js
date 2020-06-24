@@ -17,6 +17,19 @@ function Main() {
 
       <Board />
       <About />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          height: "3em",
+          backgroundColor: "#845EC2",
+          width: "100%",
+          justifyContent: "center",
+        }}
+      >
+        © 2020 Alexander Oguejiofor
+      </div>
     </div>
   );
 }

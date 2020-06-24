@@ -32,9 +32,10 @@
 .button-group .button:last-child {
   border-right: 0;
 }
-
+/* #F9F871 */
+/* #ff6f91 */
 .activecell {
-  background-color: #ff6f91;
+  background-color: #f9f871;
   height: 0.8em;
   width: 0.8em;
   cursor: pointer;

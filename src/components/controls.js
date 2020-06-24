@@ -34,13 +34,12 @@ const Controls = ({
       </div>
       <div style={{ marginLeft: "5em" }}>
         <p>
-          (Generation - <span style={{ color: "#FF6F91" }}>{generation}</span>)
+          Generation - <span style={{ color: "#FF6F91" }}>{generation}</span>
           {"   "}
-          (Alive -{" "}
-          <span style={{ color: "#F9F871" }}>{cellcount(board)[0]}</span>){" "}
-          {"   "}
-          (Dead -{" "}
-          <span style={{ color: "#008f7a" }}>{cellcount(board)[1]}</span>)
+          &nbsp;&nbsp; Alive -{" "}
+          <span style={{ color: "#F9F871" }}>{cellcount(board)[0]}</span>{" "}
+          {"   "} &nbsp;&nbsp; Dead -{" "}
+          <span style={{ color: "#008f7a" }}>{cellcount(board)[1]}</span>
         </p>
       </div>
     </div>

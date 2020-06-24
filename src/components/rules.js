@@ -9,15 +9,17 @@ const Rules = () => (
         grid.
       </p>
       <p>
-        For each cell, it counts that cell's active neighbors. That is, the
-        eight surrounding cells (up, down, left, right, and diagonals), and then
-        acts on that result.
+        For each cell, it counts the active neighbors. That is, the eight
+        surrounding cells (up, down, left, right, and diagonals), and then acts
+        on that result.
       </p>
       <ul>
+        <h4 style={{ color: "#ff6f91" }}>Rules for death</h4>
         <li>
           If the cell is alive and has 2 or 3 neighbors, then it remains alive.
           Else it dies
         </li>
+        <h4 style={{ color: "#ff6f91" }}>Rules for birth</h4>
         <li>
           If the cell is dead and has exactly 3 neighbors, then it comes to
           life. Else, it remains dead.
