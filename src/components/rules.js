@@ -5,9 +5,13 @@ const Rules = () => (
     <h3 style={{ textAlign: "center", color: "#ff6f91" }}>Rules</h3>
     <div>
       <p>
-        In the Game of Life, these rules examine each cell of the grid. For each
-        cell, it counts that cell's eight neighbors (up, down, left, right, and
-        diagonals), and then act on that result.
+        In Conway's Game of Life, there are rules that examine each cell of the
+        grid.
+      </p>
+      <p>
+        For each cell, it counts that cell's active neighbors. That is, the
+        eight surrounding cells (up, down, left, right, and diagonals), and then
+        acts on that result.
       </p>
       <ul>
         <li>

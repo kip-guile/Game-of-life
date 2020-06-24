@@ -15,6 +15,8 @@ const generationCount = (state = 0, action) => {
       return 0;
     case "RANDOM":
       return 0;
+    case "SET_PRESET":
+      return 0;
     default:
       return state;
   }
@@ -28,6 +30,16 @@ const playReducer = (state = initialPlayState, action) => {
         label: action.payload,
       };
     case "STOP":
+      return {
+        playing: false,
+        label: null,
+      };
+    case "CLEAR":
+      return {
+        playing: false,
+        label: null,
+      };
+    case "SET_PRESET":
       return {
         playing: false,
         label: null,

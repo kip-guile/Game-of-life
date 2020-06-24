@@ -22,21 +22,23 @@ const Controls = ({
       stopPlay();
     }
   };
+  // closure starts -------------------------
   const withClosure = () => {
     let newSPeed = 500;
     const fast = () => {
-      newSPeed /= 2;
+      newSPeed /= 3;
+      // clear interval before increasing speed
       if (play.label) {
         clearInterval(play.label);
       }
-      // if (play.playing === true) {
       const label = setInterval(nextSlide, newSPeed);
       playNow(label);
-      // }
     };
     return fast;
   };
   const deploy = withClosure();
+  // closure ends
+  // ---------------------------------------------
   const stopPlayFxn = () => {
     clearInterval(play.label);
     stopPlay();
@@ -44,7 +46,7 @@ const Controls = ({
   return (
     <div className="controls">
       <div className="buttons">
-        <Button title={"reset"} handleClick={clear} />
+        <Button title={"reset"} handleClick={() => clear(play.label)} />
         <Button icon={"fa fa-random fa-lg"} handleClick={randomize} />
         <Button
           icon={!play.playing ? "fa fa-play fa-lg" : "fa fa-pause"}
