@@ -70,7 +70,7 @@ const About = () => (
       </p>
       <p>
         You can read more about how this implementation was designed{" "}
-        <a href="https://dev.to/master_elodin/implementing-conway-s-game-of-life-d6c-temp-slug-8998?preview=565575d83f8a205937292b47ae205f2ae9f78876044c99f2068b79c3b37e72d6b8d8e93e90d3671def6f9872f388f181ca986e5ab7baecdec8409ce1">
+        <a href="https://dev.to/master_elodin/implementing-conway-s-game-of-life-42fd">
           here
         </a>
         .{" "}
