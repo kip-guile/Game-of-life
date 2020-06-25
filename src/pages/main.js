@@ -9,6 +9,9 @@ function Main() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        paddingLeft: "2em",
+        paddingTop: "2em",
+        paddingRight: "2em",
       }}
     >
       <div style={{ marginBottom: "1.9em", color: "#ff6f91" }}>
@@ -24,7 +27,7 @@ function Main() {
           alignItems: "center",
           height: "3em",
           backgroundColor: "#845EC2",
-          width: "100%",
+          width: "70%",
           justifyContent: "center",
         }}
       >

@@ -1,5 +1,6 @@
 import React from "react";
 import john from "./John-Conway.jpg";
+import "../App.css";
 
 const About = () => (
   <article
@@ -21,9 +22,9 @@ const About = () => (
     <section
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
-      <image style={{ marginBottom: "2em" }}>
+      <div style={{ marginBottom: "2em" }}>
         <img src={john} alt="John-Conway" />
-      </image>
+      </div>
       <p>
         Conway’s game of life is a zero player game which means its evolution
         throughout the game is determined by its initial input and no further
@@ -34,8 +35,9 @@ const About = () => (
     </section>
     <section>
       <p>
-        The algorithm is Turing complete which means that it is a system able to
-        recognise or decide other data manipulation sets.{" "}
+        The algorithm which this game is based on is is Turing complete which
+        means that it is a system able to recognise or decide other data
+        manipulation sets.{" "}
       </p>
       <p>
         Fundamentally, the Game of Life is a grid featuring a collection of
@@ -65,6 +67,21 @@ const About = () => (
       </p>
       <p style={{ color: "#f9f871" }}>
         Fun fact: The game was conceived on a go board, not a computer.
+      </p>
+      <p>
+        You can read more about how this implementation was designed{" "}
+        <a href="https://dev.to/master_elodin/implementing-conway-s-game-of-life-d6c-temp-slug-8998?preview=565575d83f8a205937292b47ae205f2ae9f78876044c99f2068b79c3b37e72d6b8d8e93e90d3671def6f9872f388f181ca986e5ab7baecdec8409ce1">
+          here
+        </a>
+        .{" "}
+        <p>
+          Also, if you need more presets for the game, Alan Hensel did a great
+          job of compiling an extensive glossary. You can find that{" "}
+          <a href="http://www.radicaleye.com/lifepage/picgloss/picgloss.html">
+            here
+          </a>
+          .
+        </p>
       </p>
     </section>
   </article>

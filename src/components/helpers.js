@@ -42,8 +42,11 @@ export const stopPlayFxn = (play, stopPlay) => {
 // closure starts -------------------------
 export const withClosure = (play, nextSlide, playNow) => {
   let newSPeed = 500;
+  let counter = 2;
   const fast = () => {
-    newSPeed /= 3;
+    counter++;
+    console.log(counter);
+    newSPeed /= counter;
     // clear interval before increasing speed
     if (play.label) {
       clearInterval(play.label);
