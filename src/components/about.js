@@ -74,14 +74,14 @@ const About = () => (
           here
         </a>
         .{" "}
-        <p>
-          Also, if you need more presets for the game, Alan Hensel did a great
-          job of compiling an extensive glossary. You can find that{" "}
-          <a href="http://www.radicaleye.com/lifepage/picgloss/picgloss.html">
-            here
-          </a>
-          .
-        </p>
+      </p>
+      <p>
+        Also, if you need more presets for the game, Alan Hensel did a great job
+        of compiling an extensive glossary. You can find that{" "}
+        <a href="http://www.radicaleye.com/lifepage/picgloss/picgloss.html">
+          here
+        </a>
+        .
       </p>
     </section>
   </article>

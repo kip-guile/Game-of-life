@@ -55,6 +55,52 @@ const Presets = ({ setPreset, label }) => {
           )
         }
       />
+      <Button
+        title="Gosper glider gun"
+        handleClick={() =>
+          setPreset(
+            [
+              [15, 0],
+              [16, 0],
+              [15, 1],
+              [16, 1],
+              [15, 10],
+              [16, 10],
+              [17, 10],
+              [18, 11],
+              [14, 11],
+              [13, 12],
+              [13, 13],
+              [19, 12],
+              [19, 13],
+              [16, 14],
+              [14, 15],
+              [15, 16],
+              [16, 16],
+              [17, 16],
+              [18, 15],
+              [16, 17],
+              [15, 20],
+              [14, 20],
+              [13, 20],
+              [13, 21],
+              [14, 21],
+              [15, 21],
+              [12, 22],
+              [16, 22],
+              [12, 24],
+              [11, 24],
+              [16, 24],
+              [17, 24],
+              [13, 34],
+              [13, 35],
+              [14, 34],
+              [14, 35],
+            ],
+            label
+          )
+        }
+      />
       <h4 style={{ color: "#ff6f91" }}>Oscillators</h4>
       <Button
         title={"Blinker"}
@@ -85,7 +131,7 @@ const Presets = ({ setPreset, label }) => {
           )
         }
       />
-      <Button
+      {/* <Button
         title="Beacon"
         handleClick={() =>
           setPreset(
@@ -102,7 +148,7 @@ const Presets = ({ setPreset, label }) => {
             label
           )
         }
-      />
+      /> */}
       <Button
         title={"Pentadecathon"}
         handleClick={() =>
@@ -193,8 +239,23 @@ const Presets = ({ setPreset, label }) => {
           )
         }
       />
-      <h4 style={{ color: "#ff6f91" }}>Still Lifes</h4>
       <Button
+        title="R-Pentomino"
+        handleClick={() =>
+          setPreset(
+            [
+              [18, 19],
+              [18, 20],
+              [19, 19],
+              [19, 18],
+              [20, 19],
+            ],
+            label
+          )
+        }
+      />
+      <h4 style={{ color: "#ff6f91" }}>Still Lifes</h4>
+      {/* <Button
         title={"Beehive"}
         handleClick={() =>
           setPreset(
@@ -209,7 +270,7 @@ const Presets = ({ setPreset, label }) => {
             label
           )
         }
-      />
+      /> */}
       <Button
         title={"Boat"}
         handleClick={() =>
@@ -258,7 +319,7 @@ const Presets = ({ setPreset, label }) => {
         }
       />
 
-      <Button
+      {/* <Button
         title="Tub"
         handleClick={() =>
           setPreset(
@@ -271,7 +332,7 @@ const Presets = ({ setPreset, label }) => {
             label
           )
         }
-      />
+      /> */}
     </div>
   );
 };

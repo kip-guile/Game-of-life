@@ -54,6 +54,7 @@ const boardReducer = (state = initialBoard, action) => {
     case "SWITCH":
       let x = action.payload.x;
       let y = action.payload.y;
+      console.log(x, y);
       let board = { ...state };
       let cell = board[x][y];
       if (cell === 0) {
