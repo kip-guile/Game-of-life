@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import Button from "./button";
 import "../App.css";
 import { nextSlide, clear, playNow, stopPlay, randomize } from "../actions";
-import { cellcount, togglePlay, stopPlayFxn, withClosure } from "./helpers";
+import { cellcount, togglePlay, stopPlayFxn } from "./helpers";
 
 const Controls = ({
   nextSlide,
@@ -15,7 +15,23 @@ const Controls = ({
   generation,
   board,
 }) => {
-  const deploy = withClosure(play, nextSlide, playNow);
+  const [count, setCount] = useState(3);
+  // const deploy = withClosure(play, nextSlide, forward, playNow);
+  const fast = () => {
+    if (count === 5) {
+      setCount(3);
+    } else {
+      setCount(count + 1);
+    }
+    console.log(count);
+    let newspeed = 500 / count;
+    // clear interval before increasing speed
+    if (play.label) {
+      clearInterval(play.label);
+    }
+    const label = setInterval(nextSlide, newspeed);
+    playNow(label);
+  };
   return (
     <div className="controls">
       <div className="buttons">
@@ -30,7 +46,7 @@ const Controls = ({
           handleClick={() => stopPlayFxn(play, stopPlay)}
         />
         <Button icon={"fa fa-step-forward fa-lg"} handleClick={nextSlide} />
-        <Button icon={"fa fa-fast-forward fa-lg"} handleClick={deploy} />
+        <Button icon={"fa fa-fast-forward fa-lg"} handleClick={fast} />
       </div>
       <div style={{ marginLeft: "5em" }}>
         <p>

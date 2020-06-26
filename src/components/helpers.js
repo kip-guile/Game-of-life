@@ -40,9 +40,8 @@ export const stopPlayFxn = (play, stopPlay) => {
 
 // fastforward button function
 // closure starts -------------------------
-export const withClosure = (play, nextSlide, playNow) => {
+export const withClosure = (play, nextSlide, counter, playNow) => {
   let newSPeed = 500;
-  let counter = 2;
   const fast = () => {
     counter++;
     console.log(counter);
