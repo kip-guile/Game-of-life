@@ -16,7 +16,6 @@ const Controls = ({
   board,
 }) => {
   const [count, setCount] = useState(3);
-  // const deploy = withClosure(play, nextSlide, forward, playNow);
   const fast = () => {
     if (count === 5) {
       setCount(3);

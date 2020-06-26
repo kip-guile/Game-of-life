@@ -37,24 +37,3 @@ export const stopPlayFxn = (play, stopPlay) => {
   clearInterval(play.label);
   stopPlay();
 };
-
-// fastforward button function
-// closure starts -------------------------
-export const withClosure = (play, nextSlide, counter, playNow) => {
-  let newSPeed = 500;
-  const fast = () => {
-    counter++;
-    console.log(counter);
-    newSPeed /= counter;
-    // clear interval before increasing speed
-    if (play.label) {
-      clearInterval(play.label);
-    }
-    const label = setInterval(nextSlide, newSPeed);
-    playNow(label);
-  };
-  return fast;
-};
-
-// closure ends
-// ---------------------------------------------
